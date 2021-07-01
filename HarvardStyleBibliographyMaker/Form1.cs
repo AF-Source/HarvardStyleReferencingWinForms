@@ -54,14 +54,17 @@ namespace HarvardStyleBibliographyMaker
             string websitename = WebsiteName.Text;
             string title = Title.Text; 
             string url = URL.Text;
+           
             string time = DateTime.Now.ToString("d");
             ComputingFormat format = new ComputingFormat();
             string reference = format.Formating(author, yearofpublishment, websitename, title, url, time);
             List<string> ListOfAllReferences = new List<string>();
             ListOfAllReferences.Add(reference);
              FinalisedList = string.Join("", ListOfAllReferences);
-            textBox1.AppendText(FinalisedList + Environment.NewLine);
-            
+            richTextBox1.AppendText(FinalisedList + Environment.NewLine);
+           
+
+
             Author.Clear(); //Clearing all of the textboxes for user's convenience
             WebsiteName.Clear();
             YearOfPublishment.Clear();
@@ -118,20 +121,37 @@ namespace HarvardStyleBibliographyMaker
             {
 
                 StreamWriter sw = new StreamWriter(saveFileDialog1.FileName);
-                sw.Write(textBox1.Text);
+                sw.Write(richTextBox1.Text);
                 sw.Flush();
                 sw.Close();
                 MessageBox.Show("Don't forget to italise the title!", "Reminder!");
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Welcome to the Automatic Harvard Referencer Tool! To use it please enter all of the fields and press add to the list. You can edit the list right away by clicking on the big textbox on the right!", "Help Menu");
+            MessageBox.Show("Welcome to the Automatic Harvard Referencer Tool! To use it please enter all of the fields and press add to the list. You can edit the list right away by clicking on the big textbox on the right!" 
+                + Environment.NewLine +  "Press Italise to italise the title. Press regular to make font normal.", "Help Menu");
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, FontStyle.Italic);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, FontStyle.Regular);
         }
     }
 }
