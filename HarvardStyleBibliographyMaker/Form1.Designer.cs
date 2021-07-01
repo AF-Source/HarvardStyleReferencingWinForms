@@ -46,7 +46,7 @@ namespace HarvardStyleBibliographyMaker
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.ListRTB = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -61,7 +61,6 @@ namespace HarvardStyleBibliographyMaker
             this.Author.Name = "Author";
             this.Author.Size = new System.Drawing.Size(206, 20);
             this.Author.TabIndex = 0;
-            this.Author.TextChanged += new System.EventHandler(this.Author_TextChanged);
             // 
             // URL
             // 
@@ -70,7 +69,6 @@ namespace HarvardStyleBibliographyMaker
             this.URL.Name = "URL";
             this.URL.Size = new System.Drawing.Size(206, 20);
             this.URL.TabIndex = 1;
-            this.URL.TextChanged += new System.EventHandler(this.URL_TextChanged);
             // 
             // Title
             // 
@@ -79,7 +77,6 @@ namespace HarvardStyleBibliographyMaker
             this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(206, 20);
             this.Title.TabIndex = 2;
-            this.Title.TextChanged += new System.EventHandler(this.Title_TextChanged);
             // 
             // WebsiteName
             // 
@@ -88,7 +85,6 @@ namespace HarvardStyleBibliographyMaker
             this.WebsiteName.Name = "WebsiteName";
             this.WebsiteName.Size = new System.Drawing.Size(206, 20);
             this.WebsiteName.TabIndex = 3;
-            this.WebsiteName.TextChanged += new System.EventHandler(this.WebsiteName_TextChanged);
             // 
             // label2
             // 
@@ -101,7 +97,6 @@ namespace HarvardStyleBibliographyMaker
             this.label2.Size = new System.Drawing.Size(80, 30);
             this.label2.TabIndex = 8;
             this.label2.Text = "Author";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -114,7 +109,6 @@ namespace HarvardStyleBibliographyMaker
             this.label3.Size = new System.Drawing.Size(203, 30);
             this.label3.TabIndex = 9;
             this.label3.Text = "Year of Publishment";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -127,7 +121,6 @@ namespace HarvardStyleBibliographyMaker
             this.label4.Size = new System.Drawing.Size(54, 30);
             this.label4.TabIndex = 10;
             this.label4.Text = "Title";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -140,7 +133,6 @@ namespace HarvardStyleBibliographyMaker
             this.label5.Size = new System.Drawing.Size(152, 30);
             this.label5.TabIndex = 11;
             this.label5.Text = "Website Name";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -174,7 +166,6 @@ namespace HarvardStyleBibliographyMaker
             this.YearOfPublishment.Name = "YearOfPublishment";
             this.YearOfPublishment.Size = new System.Drawing.Size(206, 20);
             this.YearOfPublishment.TabIndex = 16;
-            this.YearOfPublishment.TextChanged += new System.EventHandler(this.YearOfPublishment_TextChanged);
             // 
             // menuStrip1
             // 
@@ -188,7 +179,6 @@ namespace HarvardStyleBibliographyMaker
             this.menuStrip1.Size = new System.Drawing.Size(769, 24);
             this.menuStrip1.TabIndex = 18;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // helpToolStripMenuItem
             // 
@@ -196,7 +186,7 @@ namespace HarvardStyleBibliographyMaker
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
-            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.HelpToolStripMenuItem_Click);
             // 
             // fileToolStripMenuItem
             // 
@@ -213,18 +203,17 @@ namespace HarvardStyleBibliographyMaker
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(278, 54);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextBox1.Size = new System.Drawing.Size(479, 538);
-            this.richTextBox1.TabIndex = 19;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            this.ListRTB.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListRTB.Location = new System.Drawing.Point(278, 54);
+            this.ListRTB.Name = "richTextBox1";
+            this.ListRTB.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.ListRTB.Size = new System.Drawing.Size(479, 538);
+            this.ListRTB.TabIndex = 19;
+            this.ListRTB.Text = "";
             // 
             // button1
             // 
@@ -236,7 +225,7 @@ namespace HarvardStyleBibliographyMaker
             this.button1.TabIndex = 20;
             this.button1.Text = "Italise";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // button2
             // 
@@ -248,7 +237,7 @@ namespace HarvardStyleBibliographyMaker
             this.button2.TabIndex = 21;
             this.button2.Text = "Clear the list";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button3
             // 
@@ -260,7 +249,7 @@ namespace HarvardStyleBibliographyMaker
             this.button3.TabIndex = 22;
             this.button3.Text = "Regular";
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // Form1
             // 
@@ -271,7 +260,7 @@ namespace HarvardStyleBibliographyMaker
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.ListRTB);
             this.Controls.Add(this.YearOfPublishment);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.label6);
@@ -290,7 +279,6 @@ namespace HarvardStyleBibliographyMaker
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "HarvardReferencer";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -316,7 +304,7 @@ namespace HarvardStyleBibliographyMaker
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox ListRTB;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
