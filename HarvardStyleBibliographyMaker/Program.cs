@@ -25,11 +25,19 @@ namespace HarvardStyleBibliographyMaker
     {
         public string Formating(string Author, string PublishYr, string ArticleTitle, string WebsiteName, string URL, string CurrentTime)
         {
-            string[] AuthorName = Author.Split(' ');
-            string FirstLetterOfTheauthorName = AuthorName[0].Substring(0, 1);
+            try // To prevent the user from putting in not the whole name
+            {
+                string[] AuthorName = Author.Split(' ');
+                string FirstLetterOfTheauthorName = AuthorName[0].Substring(0, 1);
 
-            string CompletedFormating = $"{AuthorName[1]}, {FirstLetterOfTheauthorName}. ({PublishYr}) {ArticleTitle}. [online] {WebsiteName}. Available at: {URL} [Accessed: {CurrentTime}] ";
-            return CompletedFormating;
+                string CompletedFormating = $"{AuthorName[1]}, {FirstLetterOfTheauthorName}. ({PublishYr}) {ArticleTitle}. [online] {WebsiteName}. Available at: {URL} [Accessed: {CurrentTime}] ";
+                return CompletedFormating;
+            }
+            catch
+            {
+                MessageBox.Show("Please put in the whole Author Name");
+            }
+            return null;
         }
     }
 
