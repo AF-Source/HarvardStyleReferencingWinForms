@@ -57,11 +57,9 @@ namespace HarvardStyleBibliographyMaker
             string time = DateTime.Now.ToString("d");
             ComputingFormat format = new ComputingFormat();
             string reference = format.Formating(author, yearofpublishment, websitename, title, url, time);
-            List<string> ListOfAllReferences = new List<string>
-            {
-                reference
-            };
-            FinalisedList = string.Join("", ListOfAllReferences);
+            List<string> ListOfAllReferences = new List<string>();
+            ListOfAllReferences.Add(reference);
+             FinalisedList = string.Join("", ListOfAllReferences);
             textBox1.AppendText(FinalisedList + Environment.NewLine);
             
             Author.Clear(); //Clearing all of the textboxes for user's convenience
