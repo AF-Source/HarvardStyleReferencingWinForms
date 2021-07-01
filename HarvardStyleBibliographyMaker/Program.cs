@@ -25,7 +25,7 @@ namespace HarvardStyleBibliographyMaker
     {
         public string Formating(string Author, string PublishYr, string ArticleTitle, string WebsiteName, string URL, string CurrentTime)
         {
-            string[] AuthorName = Author.Split();
+            string[] AuthorName = Author.Split(' ');
             string FirstLetterOfTheauthorName = AuthorName[0].Substring(0, 1);
 
             string CompletedFormating = $"{AuthorName[1]}, {FirstLetterOfTheauthorName}. ({PublishYr}) {ArticleTitle}. [online] {WebsiteName}. Available at: {URL} [Accessed: {CurrentTime}] ";

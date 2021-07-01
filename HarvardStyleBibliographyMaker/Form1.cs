@@ -26,25 +26,25 @@ namespace HarvardStyleBibliographyMaker
 
         private void Author_TextChanged(object sender, EventArgs e)
         {
-            string author = Author.Text;
+           
         }
 
 
 
         private void WebsiteName_TextChanged(object sender, EventArgs e)
         {
-            string websitename = WebsiteName.Text;
+           
         }
 
         private void Title_TextChanged(object sender, EventArgs e)
         {
-            string title = Title.Text;
+            
         }
 
 
         private void URL_TextChanged(object sender, EventArgs e)
         {
-            string url = URL.Text;
+            
         }
 
         public void AddButton_Click(object sender, EventArgs e)
@@ -60,6 +60,7 @@ namespace HarvardStyleBibliographyMaker
             List<string> ListOfAllReferences = new List<string>();
             ListOfAllReferences.Add(reference);
              FinalisedList = string.Join("", ListOfAllReferences);
+
             listView1.Items.Add(FinalisedList, 3);
 
 
