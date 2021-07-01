@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Runtime.InteropServices;
 namespace HarvardStyleBibliographyMaker
 {
     static class Program
@@ -23,7 +23,7 @@ namespace HarvardStyleBibliographyMaker
     }
     class ComputingFormat
     {
-        public string Formating(string Author, string PublishYr, string ArticleTitle, string WebsiteName, string URL, string CurrentTime)
+        public string Formating(string Author, [Optional]string PublishYr, string ArticleTitle, string WebsiteName, string URL, string CurrentTime)
         {
             try // To prevent the user from putting in not the whole name
             {
