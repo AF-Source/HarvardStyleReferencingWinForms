@@ -6,9 +6,9 @@ using System.Windows.Forms;
 
 namespace HarvardStyleBibliographyMaker
 {
-    public partial class Form1 : Form
+    public partial class HarvardStyleBibliography : Form
     {
-        public Form1()
+        public HarvardStyleBibliography()
         {
             InitializeComponent();
         }

@@ -1,7 +1,7 @@
 ﻿
 namespace HarvardStyleBibliographyMaker
 {
-    partial class Form1
+    partial class HarvardStyleBibliography
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace HarvardStyleBibliographyMaker
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HarvardStyleBibliography));
             this.Author = new System.Windows.Forms.TextBox();
             this.URL = new System.Windows.Forms.TextBox();
             this.Title = new System.Windows.Forms.TextBox();
