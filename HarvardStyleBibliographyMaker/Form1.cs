@@ -52,7 +52,7 @@ namespace HarvardStyleBibliographyMaker
             string author = Author.Text;
             string yearofpublishment = YearOfPublishment.Text;
             string websitename = WebsiteName.Text;
-            string title = Title.Text;
+            string title = Title.Text; 
             string url = URL.Text;
             string time = DateTime.Now.ToString("d");
             ComputingFormat format = new ComputingFormat();
@@ -60,10 +60,13 @@ namespace HarvardStyleBibliographyMaker
             List<string> ListOfAllReferences = new List<string>();
             ListOfAllReferences.Add(reference);
              FinalisedList = string.Join("", ListOfAllReferences);
-
-            listView1.Items.Add(FinalisedList, 3);
-
-
+            textBox1.AppendText(FinalisedList + Environment.NewLine);
+            
+            Author.Clear(); //Clearing all of the textboxes for user's convenience
+            WebsiteName.Clear();
+            YearOfPublishment.Clear();
+            Title.Clear();
+            URL.Clear();
         }
 
         private void BibliographyList_SelectedIndexChanged(object sender, EventArgs e)
@@ -115,10 +118,20 @@ namespace HarvardStyleBibliographyMaker
             {
 
                 StreamWriter sw = new StreamWriter(saveFileDialog1.FileName);
-                sw.Write(FinalisedList);
+                sw.Write(textBox1.Text);
                 sw.Flush();
                 sw.Close();
+                MessageBox.Show("Don't forget to italise the title!", "Reminder!");
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Welcome to the Automatic Harvard Referencer Tool! To use it please enter all of the fields and press add to the list. You can edit the list right away by clicking on the big textbox on the right!", "Help Menu");
         }
     }
 }
